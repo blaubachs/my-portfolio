@@ -9,10 +9,10 @@
     --lg: #95f2d9;
     --gr: #59f8ca;
     --dgr: #1cfeba;
+
 }
 
 * {
-    background-color: black;
     color:aliceblue;
 }
 
@@ -20,53 +20,67 @@ body {
     font-family: sans-serif;
 }
 
+.header-title {
+    font-size:200%;
+    padding-left: 15px;
+}
+
 header {
+    height: 100px;
+    width:100%;
+    background-color: var(--pl);
     display:flex;
-    justify-content:flex-start;
-    align-items:center;
-    flex-wrap:wrap;
-    padding: 3%;
-    background-image:linear-gradient(var(--dpl) 0%, var(--pl) 25%, var(--lpl) 50%, var(--pl) 75%, var(--dpl));
-}
-
-header h1 {
-    font-weight:800;
-    font-size: 200%;
-    color: black;
-    padding-right: 3%;
-    background:rgb(0, 0, 0, 0);
-    text-decoration:underline;
-}
-
-nav {
-    padding-left:15%;
-    width:60%;
-    background-color: rgb(0, 0, 0, 0);
-}
-
-nav ul {
-    display:flex;
+    flex-direction: row;
     justify-content: space-between;
-    background-color: rgb(0, 0, 0, 0);
+    align-items:center;
 }
 
-nav li {
-    text-decoration: underline;
-    white-space:nowrap;
-    font-weight:bold;
-    padding: 1%;
-    max-width: 3%;
-    background-color: rgb(0, 0, 0, 0);
+main {
+    background-color: black;
 }
 
-a {
-    background-color: rgb(0, 0, 0, 0);
-    color: black;
+.header-title {
+    height:fit-content;
+    width: 25%;
+    font-weight:800;
+    color: var(--lbg);
 }
 
-.banner-image {
+.site-nav-menu {
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    margin-right: 20px;
+}
+
+.site-nav-menu a {
+    margin: 0% 1.5% 0% 1.5%;
+    text-decoration: none;
+    width: 120px;
+}
+
+.site-nav-item {
+    padding: 0% 2% 0% 2%;
+    color: var(--lbg);
+    text-align:center;
+    border-bottom: 3px solid var(--lbg);
+}
+
+.hero {
     border-top: solid 2px black;
-    height:64px;
+    height:100px;
+    background-image: url(./images/20191222200023_1.jpg);
+    background-repeat:no-repeat;
+    background-position: center -300px;
+    background:cover;
+    position:relative;
+}
+
+.hero h2 {
+    position:absolute;
+    width:25%;
+    left: 75%;
+    border: 1px solid white;
 }
 
 .about-me,
@@ -87,22 +101,43 @@ a {
 .about-me h2,
 .work h2,
 .contact-me h2 {
-    min-width:15%;
+    min-width:25%;
+    font-size: 45px;
+    text-align:left;
 }
 
 .about-me aside,
-.work aside,
 .contact-me aside {
     padding:2%;
     border-left: solid 5px var(--pl);
     display:flex;
     flex-wrap:wrap;
     justify-content: center;
-    min-width: 25%;
+    width: 75%;
 }
 
 .contact-me aside a {
     color: aliceblue;
+}
+
+.work-grid {
+    width: 75%;
+    padding:2%;
+    border-left: solid 5px var(--pl);
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows:auto;
+    gap: 15px;
+}
+
+#lloyd,
+#spotify,
+#css-cheatsheet,
+#placeholder1,
+#placeholder2 {
+    grid-template-areas: 
+        "#lloyd #lloyd"
+    ;
 }
 
 .img-div {
@@ -110,38 +145,88 @@ a {
     display:flex;
     flex-wrap:wrap;
     justify-content: center;
-    padding:1.5%;
+    align-items: flex-end;
+    overflow:hidden;
+    width:624px;
+    margin:10px;
+    opacity:0.8;
+    transition:all 500ms ease-in-out;
 }
 
-.img-div img {
-    /* width: 100%; */
-    
+.img-div:hover {
+    opacity:1;
 }
 
 .img-div h3{
-    position:absolute;
-    left: 5%;
-    bottom: 11.1%;
-    background-color: var(--pl);
-    /* width:83%; */
+    border-top: 2px solid var(--bg);
+    display:flex;
+    margin-top: -7%;
+    height:fit-content;
+    background-image:linear-gradient(90deg, var(--mild-green-thing) 0%, var(--lg) 33%, var(--gr) 66%);
+    width:100%;
+    padding: 0.3% 2.5% 0.8% 2.5%;
+    font-weight: 800;
+    text-shadow: 1px 1px 2px var(--bg);
+    text-decoration: underline;
+    font-style:italic;
+    color: black;
+    overflow:hidden;
 }
 
 .img-div p {
-    position:absolute;
-    left: 5%;
-    bottom: 1%;
-    background-color: var(--pl);
-    /* width:90%;
-    height:10%; */
+    border-top: 1px solid var(--bg);
+    display:flex;
+    width:100%;
+    font-size: 75%;
+    font-style: italic;
+    text-shadow: 1px 1px 2px var(--bg);
+    padding: 0.5% 2% 0.5% 4%;
+    background-image:linear-gradient(90deg, var(--lg) 0%, var(--gr) 33%, var(--dgr) 66%);
+    color: black;
 }
 
 .img-div img {
-    /* min-width: 115%; */
-    flex-grow:2;
-    padding: 0 5% 0 5%;
-    transition:all 0.2s ease-in-out;
+    width: 624px;
+    height: 624px;
 }
 
-.img-div img:hover {
+#lloyd1 {
+    object-fit:cover;
+    transform: scale(1.5);
+    z-index:-1;
+}
+
+.img-div:hover {
     transform:scale(1.02);
+}
+
+.site-nav-item:hover {
+    color: var(--dpl);
+    border-bottom: 3px solid var(--dpl);
+}
+
+@media screen and (max-width: 768px) {
+    .about-me,
+    .work,
+    .contact-me {
+        display:flex;
+        flex-direction:column;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-me aside,
+    .work aside,
+    .contact-me aside {
+        border-left: solid 0px;
+        border-top: solid 5px var(--pl);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-me h2,
+    .work h2,
+    .contact-me h2 {
+        padding-bottom:3%;
+    }
 }
