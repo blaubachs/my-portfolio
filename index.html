@@ -12,20 +12,22 @@
     <header>
         <h1 class="header-title">BEN LAUBACH</h1>
         <ul class="site-nav-menu">
-            <a href="#"><li id="about-me" class="site-nav-item">About Me</li></a>
-            <a href="#"><li id="work" class="site-nav-item">Work</li></a>
-            <a href="#"><li id="contact-me" class="site-nav-item">Contact Me</li></a>
+            <a href="#about-me"><li class="site-nav-item">About Me</li></a>
+            <a href="#work"><li class="site-nav-item">Work</li></a>
+            <a href="#contact-me"><li class="site-nav-item">Contact Me</li></a>
             <a href="#"><li id="resume" class="site-nav-item">Resume</li></a>
         </ul>
     </header>
 
     <section class="hero" aria-label="Banner Image of whatever">
-        <h2>comment</h2>
+        <h2>Subtitle here!</h2>
     </section>
 
     <main>
-        <section class="about-me">
-            <h2>About Me</h2>
+        <section id="about-me" class="about-me">
+            <div  class="side-titles"> 
+                <h2>About Me</h2>
+            </div>
             <aside>
                 <p>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam deserunt, suscipit fugit rerum eveniet nihil veritatis perspiciatis quibusdam exercitationem ipsam distinctio ex doloribus deleniti quos cupiditate accusamus. Vel, laborum repellendus.
@@ -41,21 +43,23 @@
                 </p>
             </aside>
         </section>
-        <section class="work">
-            <h2>Work</h2>
+        <section id="work" class="work"> 
+            <div  class="side-titles"> 
+                <h2>Work</h2>
+            </div>
             <aside class="work-grid">
                 <div class="img-div lloyd">
                     <img id="lloyd1" src="./assets/images/Tharlloyd.jpg" alt="lloyd">
                     <h3 class="img-header">LLOYD</h3>
                     <p class="img-caption">Oh look, it's a Lloyd!</p>
                 </div>
-                <div class="img-div spotify">
-                    <a href="https://open.spotify.com/artist/6NAJuwND6f2YCld60WGh6Y?si=Z3BVr9yATaud36Sy0vOu-A" target="_blank"><img src="./assets/images/beblow.jpg" alt="lloyd"></a>
-                    <h3 class="img-header">SPOTIFY</h3>
-                    <p class="img-caption">My spotify artist page!</p>
+                <div class="img-div psg">
+                    <a href="https://blaubachs.github.io/prework-study-guide/" target="_blank"><img src="./assets/images/psg.PNG" alt="lloyd"></a>
+                    <h3 class="img-header">PREWORK</h3>
+                    <p class="img-caption">My prework study guide!</p>
                 </div>
                 <div class="img-div css-cheatsheet">
-                    <img src="./assets/images/snipparino.PNG" alt="CSS project site">
+                    <a href="https://blaubachs.github.io/mini-student-project/" target="_blank"><img src="./assets/images/snipparino.PNG" alt="CSS project site"></a>
                     <h3 class="img-header">CSS CHEATSHEET</h3>
                     <p class="img-caption">a lloyd</p>
                 </div>
@@ -71,11 +75,16 @@
                 </div>
             </aside>
         </section>
-        <section class="contact-me">
-            <h2>Contact Me</h2>
+        <section id="contact-me" class="contact-me">
+            <div  class="side-titles"> 
+                <h2>Contact Me</h2>
+            </div>
             <aside>
-                <nav>
-                    <a link href="http://github.com/blaubachs" target="_blank">link</a>
+                <nav id="footer-nav">
+                    <a link href="#contact-me">+1(509)-885-0235</a>
+                    <a link href="http://github.com/blaubachs" target="_blank">Github</a>
+                    <a link href="mailto:veloswim@gmail.com">Email</a>
+                    <a link href="https://open.spotify.com/artist/6NAJuwND6f2YCld60WGh6Y?si=30b3b8a336f54e93" target="_blank">Spotify</a>
                 </nav>
             </aside>
         </section>

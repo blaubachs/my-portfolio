@@ -16,17 +16,16 @@
     color:aliceblue;
 }
 
+html {
+    min-width:480px;
+}
+
 body {
     font-family: sans-serif;
 }
 
-.header-title {
-    font-size:200%;
-    padding-left: 15px;
-}
-
 header {
-    height: 100px;
+    height: 120px;
     width:100%;
     background-color: var(--pl);
     display:flex;
@@ -40,6 +39,8 @@ main {
 }
 
 .header-title {
+    font-size:200%;
+    padding-left: 15px;
     height:fit-content;
     width: 25%;
     font-weight:800;
@@ -51,12 +52,13 @@ main {
     flex-direction:row;
     align-items:center;
     margin-right: 20px;
+    min-width: 480px;
 }
 
 .site-nav-menu a {
     margin: 0% 1.5% 0% 1.5%;
     text-decoration: none;
-    width: 120px;
+    width: 100px;
 }
 
 .site-nav-item {
@@ -74,13 +76,18 @@ main {
     background-position: center -300px;
     background-size:cover;
     position:relative;
+    overflow:hidden;
 }
 
 .hero h2 {
     position:absolute;
-    width:25%;
-    left: 75%;
-    border: 1px solid white;
+    width:50%;
+    right:0;
+    top:25%;
+    height: fit-content;
+    padding: 6px 0px 6px 15px;
+    font-size:200%;
+    background: var(--lbg);
 }
 
 .about-me,
@@ -88,8 +95,9 @@ main {
 .contact-me {
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
-    align-items:center;
+    /* justify-content:space-between;
+    align-items:center; */
+    position:relative;
     padding: 3%;
     min-width: 40%;
 }
@@ -98,16 +106,14 @@ main {
     justify-content:flex-start;
 }
 
-.about-me h2,
-.work h2,
-.contact-me h2 {
+.side-titles {
     min-width:25%;
     font-size: 45px;
-    text-align:left;
+    text-align:right;
+    margin-right:1%;
 }
 
-.about-me aside,
-.contact-me aside {
+.about-me aside {
     padding:2%;
     border-left: solid 5px var(--pl);
     display:flex;
@@ -115,12 +121,27 @@ main {
     justify-content: center;
     width: 75%;
 }
+.contact-me aside {
+    padding:2%;
+    border-left: solid 5px var(--pl);
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: flex-start;
+    align-items:flex-end;
+    width: 75%;
+    min-width:75%;
+}
+
+.about-me p {
+    padding: 0.5%;
+}
 
 .contact-me aside a {
     color: aliceblue;
 }
 
 .img-div {
+    border: 5px ridge rgba(151, 242, 218);;
     position:relative;
     display:flex;
     flex-direction:column;
@@ -130,21 +151,20 @@ main {
     width:624px;
     height:624px;
     margin:10px;
-    opacity:0.8;
+    padding:10px;
+    background-color:rgba(151, 242, 218, 0.5);
     transition:all 500ms ease-in-out;
 }
 
-.img-div:hover {
-    opacity:1;
-}
+
 
 .img-div h3{
-    border-top: 2px solid var(--bg);
+    border: 2px solid var(--lbg);
     display:flex;
     margin-top: -7%;
     height:fit-content;
     background-image:linear-gradient(90deg, var(--mild-green-thing) 0%, var(--lg) 33%, var(--gr) 66%);
-    width:100%;
+    width:25%;
     padding: 0.3% 2.5% 0.8% 2.5%;
     font-weight: 800;
     text-shadow: 1px 1px 2px var(--bg);
@@ -152,13 +172,14 @@ main {
     font-style:italic;
     color: black;
     overflow:hidden;
+    box-shadow: 2px 2px 3px var(--pl);
     z-index: 1;
 }
 
 .img-div p {
-    border-top: 1px solid var(--bg);
+    border: 2px solid var(--lbg);
     display:flex;
-    width:100%;
+    width:25%;
     font-size: 75%;
     font-style: italic;
     text-shadow: 1px 1px 2px var(--bg);
@@ -166,6 +187,7 @@ main {
     background-image:linear-gradient(90deg, var(--lg) 0%, var(--gr) 33%, var(--dgr) 66%);
     color: black;
     z-index: 1;
+    box-shadow: 2px 2px 3px var(--pl);
 }
 
 .img-div img {
@@ -175,28 +197,31 @@ main {
     left: 0;
     height: 100%;
     width: 100%;
+    opacity:0.9;
+    transition:all 500ms ease-in-out;
 }
 
 #lloyd1 {
     object-fit:cover;
     transform: scale(1.5);
-    z-index:-1;
 }
 
 .lloyd,
-.spotify,
+.psg,
 .css-cheatsheet,
 .placeholder1,
 .placeholder2 {
     width:100%;
+    grid-row: 1fr;
+    grid-column: 1fr;
 }
 
 .lloyd {
     grid-area: lloyd;
 }
 
-.spotify {
-    grid-area: spotify;
+.psg {
+    grid-area: psg;
 }
 
 .css-cheatsheet {
@@ -218,15 +243,33 @@ main {
     display:grid;
     grid-template:
         "lloyd lloyd"
-        "spotify css-cheatsheet"
+        "psg css-cheatsheet"
         "placeholder1 placeholder2"
         ;
     gap:10px;
 }
 
+#footer-nav {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    width:100%;
+    height:fit-content;
+}
+
+#footer-nav a {
+    padding:0;
+    margin:0;
+    height:fit-content;
+}
 
 .img-div:hover {
-    transform:scale(1.02);
+    transform:scale(1.01);
+    /* box-shadow: inset 0px 0px 8px var(--gr), 0 0 15px var(--lg); */
+}
+
+.img-div:hover img {
+    opacity:1;
 }
 
 .site-nav-item:hover {
@@ -240,9 +283,11 @@ main {
         flex-direction: column;
         align-items: flex-start;
     }
-    
+
     .site-nav-menu {
         padding-bottom: 10px;
+        flex-wrap:wrap;
+        margin-right:0;
     }
 
     .hero {
@@ -255,6 +300,11 @@ main {
     .contact-me {
         display:flex;
         flex-direction:column;
+        align-items:center;
+    }
+
+    .side-titles {
+        text-align:center;
     }
 
     .work-grid {
