@@ -235,6 +235,21 @@ main {
 }
 
 @media screen and (max-width: 768px) {
+    header {
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .site-nav-menu {
+        padding-bottom: 10px;
+    }
+
+    .hero {
+        background-size: cover;
+        background-position-y: top;
+    }
+
     .about-me,
     .work,
     .contact-me {
