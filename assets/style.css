@@ -72,7 +72,7 @@ main {
     background-image: url(./images/20191222200023_1.jpg);
     background-repeat:no-repeat;
     background-position: center -300px;
-    background:cover;
+    background-size:cover;
     position:relative;
 }
 
@@ -120,34 +120,15 @@ main {
     color: aliceblue;
 }
 
-.work-grid {
-    width: 75%;
-    padding:2%;
-    border-left: solid 5px var(--pl);
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows:auto;
-    gap: 15px;
-}
-
-#lloyd,
-#spotify,
-#css-cheatsheet,
-#placeholder1,
-#placeholder2 {
-    grid-template-areas: 
-        "#lloyd #lloyd"
-    ;
-}
-
 .img-div {
     position:relative;
     display:flex;
+    flex-direction:column;
     flex-wrap:wrap;
-    justify-content: center;
-    align-items: flex-end;
+    justify-content: flex-end;
     overflow:hidden;
     width:624px;
+    height:624px;
     margin:10px;
     opacity:0.8;
     transition:all 500ms ease-in-out;
@@ -171,6 +152,7 @@ main {
     font-style:italic;
     color: black;
     overflow:hidden;
+    z-index: 1;
 }
 
 .img-div p {
@@ -183,11 +165,16 @@ main {
     padding: 0.5% 2% 0.5% 4%;
     background-image:linear-gradient(90deg, var(--lg) 0%, var(--gr) 33%, var(--dgr) 66%);
     color: black;
+    z-index: 1;
 }
 
 .img-div img {
-    width: 624px;
-    height: 624px;
+    object-fit:cover;
+    position:absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
 }
 
 #lloyd1 {
@@ -195,6 +182,48 @@ main {
     transform: scale(1.5);
     z-index:-1;
 }
+
+.lloyd,
+.spotify,
+.css-cheatsheet,
+.placeholder1,
+.placeholder2 {
+    width:100%;
+}
+
+.lloyd {
+    grid-area: lloyd;
+}
+
+.spotify {
+    grid-area: spotify;
+}
+
+.css-cheatsheet {
+    grid-area: css-cheatsheet;
+}
+
+.placeholder1 {
+    grid-area: placeholder1;
+}
+
+.placeholder2 {
+    grid-area: placeholder2;
+}
+
+.work-grid {
+    width:75%;
+    padding-left:3%;
+    border-left: solid 5px var(--pl);
+    display:grid;
+    grid-template:
+        "lloyd lloyd"
+        "spotify css-cheatsheet"
+        "placeholder1 placeholder2"
+        ;
+    gap:10px;
+}
+
 
 .img-div:hover {
     transform:scale(1.02);
@@ -212,21 +241,25 @@ main {
         display:flex;
         flex-direction:column;
     }
-}
 
-@media screen and (max-width: 768px) {
+    .work-grid {
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+        width:100%;
+    }
+
     .about-me aside,
     .work aside,
     .contact-me aside {
         border-left: solid 0px;
         border-top: solid 5px var(--pl);
     }
-}
 
-@media screen and (max-width: 768px) {
     .about-me h2,
     .work h2,
     .contact-me h2 {
         padding-bottom:3%;
     }
+
 }
